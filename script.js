@@ -122,12 +122,25 @@ mirrorZone.addEventListener("touchstart", showReflection);
 mirrorZone.addEventListener("touchend", resetMirror);
 
 document.addEventListener("DOMContentLoaded", () => {
+    const startScreen = document.getElementById("start-screen");
+    const startButton = document.getElementById("start-button");
+    const gameContainer = document.querySelector(".mirror-container");
+
     loadAudio();
-    document.body.addEventListener("click", () => {
-        clickCount ++;
-    })
+
+    startButton.addEventListener("click", () => {
+        startScreen.style.display = "none";
+        gameContainer.style.display = "block";
+        clickCount = -1;
+        if (soundOn && ambientMusic) ambientMusic.play().catch(() => {});
+    });
 
     soundToggle.addEventListener("click", toggleSound);
+
+    // Gestion du clic général
+    document.body.addEventListener("click", () => {
+        if (!mirrorBroken) clickCount++;
+    });
 });
 
 

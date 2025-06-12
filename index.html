@@ -4,11 +4,15 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Miroir Mystérieux</title>
+    <title>Miroir</title>
     <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <div class="mirror-container">
+    <div id="start-screen">
+        <h1>Miroir, Miroir, qui est le plus beau ?</h1>
+        <button id="start-button">Commencer</button>
+    </div>
+    <div class="mirror-container" style="display: none;">
         <img src="sound_off_flat.png" id="sound-toggle" alt="Son" title="Activer/Désactiver le son" />
         <img src="reset.png" style="display: none;" id="repair-button" alt="Reparer" title="Réparer le miroir" />
 
