@@ -521,6 +521,20 @@ body.light-mode #darkModeToggle:hover {
     font-weight: 600;
   }
 }
+
+/* En mobile : texte coloré uniquement, pas de fond */
+@media screen and (max-width: 600px) {
+  .mode-selector button {
+    background: none !important;
+    color: #bbb;
+  }
+
+  .mode-selector button.active {
+    background: none !important;
+    color: #4a90e2;
+    border-bottom: 2px solid #4a90e2;
+  }
+}
 </style>
 </head>
 <body>
