@@ -501,6 +501,26 @@ body.light-mode #darkModeToggle:hover {
     font-weight: 600;
   }
 }
+
+/* Version plus compacte du sélecteur de mode pour mobile */
+@media screen and (max-width: 600px) {
+  .mode-selector {
+    padding: 2px 6px;
+    margin-top: 6px;
+  }
+
+  .mode-selector button {
+    margin: 0 2px;
+    padding: 6px 0;
+    font-size: 11px;
+  }
+
+  .mode-selector button.active {
+    border-bottom: 2px solid #4a90e2;
+    color: #fff;
+    font-weight: 600;
+  }
+}
 </style>
 </head>
 <body>
