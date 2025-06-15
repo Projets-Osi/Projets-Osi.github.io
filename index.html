@@ -468,30 +468,37 @@ body.light-mode #darkModeToggle:hover {
   padding: 0 !important;
 }
 
-/* Amélioration du sélecteur de mode en mobile */
+/* Nouveau design du sélecteur de mode sur mobile */
 @media screen and (max-width: 600px) {
   .mode-selector {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 6px;
-    justify-content: center;
-    margin-top: 8px;
-    padding: 0 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    overflow-x: auto;
+    background-color: #1c1c1c;
+    padding: 4px 8px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    margin-top: 10px;
   }
 
   .mode-selector button {
-    width: 100%;
-    padding: 8px;
+    flex: 1;
+    margin: 0 4px;
+    padding: 8px 0;
     font-size: 13px;
-    border-radius: 16px;
-    background-color: #333;
-    color: #fff;
+    background: none;
     border: none;
+    border-bottom: 2px solid transparent;
+    color: #bbb;
+    white-space: nowrap;
+    transition: all 0.3s ease;
   }
 
   .mode-selector button.active {
-    background-color: #4a90e2;
-    font-weight: bold;
+    border-bottom: 2px solid #4a90e2;
+    color: #fff;
+    font-weight: 600;
   }
 }
 </style>
