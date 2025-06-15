@@ -550,28 +550,24 @@ classes.forEach(({ name, id }) => {
   classIcons.appendChild(label);
 });
 
-    
-let stuffs = [];
-
-function loadStuffs() {
-  const stored = localStorage.getItem("stuffs");
-  if (stored) {
-    stuffs = JSON.parse(stored);
-    loadStuffs();
-  } else {
-    fetch("stuffs.json")
-      .then(res => res.json())
-      .then(data => {
-        stuffs = data;
-        localStorage.setItem("stuffs", JSON.stringify(stuffs));
-        loadStuffs();
-      });
-  }
-}
-
-function saveStuffs() {
-  localStorage.setItem("stuffs", JSON.stringify(stuffs));
-}
+    const stuffs = [
+      {
+        title: "Anti Torkelonia",
+        image: "https://doflex.fr/s/monsters/png/599fda5953eb8b2b2114856c5b802998.png",
+        link: "https://d-bk.net/fr/d/1Be7y",
+        mode: "PvM",
+        classe: "Toutes",
+        video: null
+      },
+      {
+        title: "Anti Misere",
+        image: "https://www.dofuspourlesnoobs.com/uploads/1/3/0/1/13010384/misere-boss-elio_orig.png",
+        link: "https://d-bk.net/fr/d/1BUu5",
+        mode: "PvM",
+        classe: "Toutes",
+        video: null
+      }
+    ];
 
     const modeRadios = document.querySelectorAll("input[name='mode']");
     const searchInput = document.getElementById("searchInput");
@@ -680,12 +676,12 @@ document.getElementById("addStuffForm").addEventListener("submit", function(e) {
   const classe = document.getElementById("stuffClasse").value;
 
   stuffs.push({ title, image, video: video || null, link, mode, classe });
-  loadStuffs();
+  renderCards();
   this.reset();
   closeStuffPopup();
 });
 
-loadStuffs();
+renderCards();
   </script>
 </body>
 </html>
